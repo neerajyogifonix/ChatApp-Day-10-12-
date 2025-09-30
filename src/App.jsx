@@ -4,10 +4,15 @@ import JoinChat from "./Components/JoinChat";
 import ChatWindow from "./Components/ChatWindow";
 import { ToastContainer, toast } from 'react-toastify';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
+
 // Establishing connection with the server
-const socket = io("http://localhost:3000", {
+const socket = io(API_URL, {
   transports: ["websocket"], // ensures WebSocket is used
 });
+
+console.log(API_URL);
 
 function App() {
   const [name, setName] = useState("");
